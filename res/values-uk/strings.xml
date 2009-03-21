@@ -35,7 +35,7 @@
     <string name="settings">"Налаштування"</string>
     <string name="manage_applications">"Керувати додатками"</string>
     <string name="dlg_app_replacement_title">"Замінити додатки"</string>
-    <string name="dlg_app_replacement_statement">"Додатки, які ви встановлюєте, заминити інші додатки."\n\n"Всі користувацькі дані будуть збережені."</string>
+    <string name="dlg_app_replacement_statement">"Додатки, які ви встановлюєте, замінить інші додатки."\n\n"Всі користувацькі дані будуть збережені."</string>
     <!-- no translation found for dlg_sys_app_replacement_statement (8158736217122431465) -->
     <skip />
     <string name="out_of_space_dlg_title">"Недостатньо місця"</string>
