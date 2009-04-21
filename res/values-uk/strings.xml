@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">"Встановлювач"</string>
+    <string name="install">"Встановити"</string>
+    <string name="done">"Зроблено"</string>
+    <!-- TODO REMOVE LATER -->
+    <string name="security_settings_desc">"Дозволити додаткові:"</string>
+    <string name="cancel">"Відміна"</string>
+    <string name="unknown">"Невідомо"</string>
+    <string name="installing">"Встановлення\u2026"</string>
+    <string name="install_done">"Додаток встановлено"</string>
+    <string name="install_confirm_question">"Бажаєте встановити додаток?"</string>
+    <string name="install_failed">"Додаток не було встановлено"</string>
+    <string name="install_failed_msg">"<xliff:g id="app_name">%1$s</xliff:g> неможливо встановити на даний телефон."</string>
+    <string name="launch">"Відкрити"</string>
+    <string name="unknown_apps_dlg_title">"Встановлення заблоковано"</string>
+    <string name="unknown_apps_dlg_text">"З погляду безпеки на вашому телефоні заблоковано встановлення додатків, джерелом яких не є Android Market."</string>
+    <string name="ok">OK</string>
+    <string name="settings">"Налаштування"</string>
+    <string name="manage_applications">"Управління додатками"</string>
+    <string name="dlg_app_replacement_title">"Заміна додатку"</string>
+    <string name="dlg_app_replacement_statement">"Додаток який ви встановлюєте, замінить інший додаток.\n\nУсі попередні користувацькі дані будуть збережені."</string>
+    <!-- Dialog attributes when replacing system app -->
+    <string name="dlg_sys_app_replacement_statement">"Це системний додаток. Ви дійсно хочете його замінити?\n\nУсі попередні користувачі даних будуть збережені."</string>
+    <string name="out_of_space_dlg_title">"Недостатньо місця"</string>
+    <string name="out_of_space_dlg_text">"Неможливо переглянути <xliff:g id="app_name">%1$s</xliff:g>. Звільніть місце в телефоні та спробуйте знову."</string>
+    <!-- strings related to uninstall activity -->
+    <string name="dlg_ok">OK</string>
+    <string name="app_not_found_dlg_title">"Додаток не знайдено"</string>
+    <string name="app_not_found_dlg_text">"Додаток не було знайдено
+у списку встановлених додатків."</string>
+    <string name="uninstall_application_question">"Видалити ддоаток?"</string>
+    <string name="uninstall_application_text">"Додаток буде видалено з вашого телефону."</string>
+    <string name="uninstalling">"Видалення\u2026"</string>
+    <string name="uninstall_done">"Видалення завершено!"</string>
+    <string name="uninstall_failed">"Видалення не виконано"</string>
+    <string name="uninstall_failed_msg">"Не вдалось видалити<xliff:g id="app_name">%1$s</xliff:g>!"</string>
+
+    <!-- Dialog attributes to indicate parse errors -->
+    <string name="Parse_error_dlg_title">"Помилка при аналізуванні"</string>
+    <string name="Parse_error_dlg_text">"Під час аналізування пакету виникла проблема."</string>
+</resources>
