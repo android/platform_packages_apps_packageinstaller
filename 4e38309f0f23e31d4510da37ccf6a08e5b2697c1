@@ -33,6 +33,24 @@
       "revId": "4e38309f0f23e31d4510da37ccf6a08e5b2697c1",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA7H///og\u003d",
+        "filename": "src/com/android/packageinstaller/UninstallAppProgress.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1002975
+      },
+      "writtenOn": "2010-09-01T23:26:45Z",
+      "side": 1,
+      "message": "er, nevermind, this is protected",
+      "parentUuid": "AAAA3n///uw\u003d",
+      "revId": "4e38309f0f23e31d4510da37ccf6a08e5b2697c1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
