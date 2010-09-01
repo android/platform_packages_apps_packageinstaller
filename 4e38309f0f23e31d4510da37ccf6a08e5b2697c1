@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA7H///pg\u003d",
+        "filename": "src/com/android/packageinstaller/UninstallAppProgress.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1002975
+      },
+      "writtenOn": "2010-09-01T23:10:47Z",
+      "side": 1,
+      "message": "hm, wonder why this is volatile. the handler that touches this is running on the UI thread",
+      "revId": "4e38309f0f23e31d4510da37ccf6a08e5b2697c1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA3n///uw\u003d",
+        "filename": "src/com/android/packageinstaller/UninstallAppProgress.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1002975
+      },
+      "writtenOn": "2010-09-01T23:10:47Z",
+      "side": 1,
+      "message": "This should be:\n\n@Override\npublic void onSave...",
+      "revId": "4e38309f0f23e31d4510da37ccf6a08e5b2697c1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
