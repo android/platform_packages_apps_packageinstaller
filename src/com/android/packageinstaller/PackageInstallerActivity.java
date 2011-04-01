@@ -80,7 +80,7 @@ public class PackageInstallerActivity extends Activity implements OnCancelListen
         boolean permVisible = false;
         if(mPkgInfo != null) {
             AppSecurityPermissions asp = new AppSecurityPermissions(this, mPkgInfo);
-            if(asp.getPermissionCount() > 0) {
+            if(asp.anyDisplayable()) {
                 permVisible = true;
                 securityList.addView(asp.getPermissionsView());
             }
