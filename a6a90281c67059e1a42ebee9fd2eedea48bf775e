@@ -1,0 +1,8 @@
+Change-Id: Ia6a90281c67059e1a42ebee9fd2eedea48bf775e
+Code-Review+2: Jean-Baptiste Queru <jbq@google.com>
+Verified+1: Jean-Baptiste Queru <jbq@google.com>
+Submitted-by: Jean-Baptiste Queru <jbq@google.com>
+Submitted-at: Wed, 18 Mar 2009 13:57:51 -0700
+Reviewed-on: https://review.source.android.com/9191
+Project: platform/packages/apps/PackageInstaller
+Branch: refs/heads/master
