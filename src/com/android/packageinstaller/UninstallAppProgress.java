@@ -31,6 +31,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.content.Context;
 
 /**
  * This activity corresponds to a download progress screen that is displayed 
@@ -74,7 +76,11 @@ public class UninstallAppProgress extends Activity implements OnClickListener {
                     switch (msg.arg1) {
                         case PackageManager.DELETE_SUCCEEDED:
                             statusText = R.string.uninstall_done;
-                            break;
+                            // Show a Toast and finish the activity
+                            Context ctx = getBaseContext();
+                            Toast.makeText(ctx, statusText, Toast.LENGTH_LONG).show();
+                            setResultAndFinish(mResultCode);
+                            return;
                         case PackageManager.DELETE_FAILED_DEVICE_POLICY_MANAGER:
                             Log.d(TAG, "Uninstall failed because " + packageName
                                     + " is a device admin");
