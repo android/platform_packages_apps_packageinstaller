@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAIw3///yo\u003d",
+        "filename": "src/com/android/packageinstaller/UninstallAppProgress.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2012-08-21T18:03:35Z",
+      "side": 1,
+      "message": "Please sort the imports alphabetically. That makes it easier to spot duplicated, and it avoids merge conflicts by not adding them all in the same place.",
+      "revId": "00a18cba9686197c711707f8dbf695a5d635d027",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
