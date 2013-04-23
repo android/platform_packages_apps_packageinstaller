@@ -19,9 +19,12 @@ package com.android.packageinstaller;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.IPackageInstallObserver;
 import android.content.pm.PackageInfo;
@@ -110,7 +113,12 @@ public class InstallAppProgress extends Activity implements View.OnClickListener
                             mLaunchButton.setEnabled(false);
                         }
                     } else if (msg.arg1 == PackageManager.INSTALL_FAILED_INSUFFICIENT_STORAGE){
+                        /// M: [ALPS00269830][ICS-TDD][Symbio][Free test] Assertion while playing music when downloading apks @{
+                        if (!isFinishing()) {
+                            Log.d(TAG, "!isFinishing()");   // Check to see whether this activity is in the process of finishing
                         showDialogInner(DLG_OUT_OF_SPACE);
+                        }
+                        /// @}
                         return;
                     } else {
                         // Generic error handling for all other error codes.
