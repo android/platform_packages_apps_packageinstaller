@@ -66,6 +66,8 @@ public class InstallAppProgress extends Activity implements View.OnClickListener
     private Intent mLaunchIntent;
     private static final int DLG_OUT_OF_SPACE = 1;
     private CharSequence mLabel;
+    private BroadcastReceiver mPackageReceiver;
+    private IntentFilter mPackageIntentFilter;
 
     private Handler mHandler = new Handler() {
         public void handleMessage(Message msg) {
@@ -271,11 +273,46 @@ public class InstallAppProgress extends Activity implements View.OnClickListener
             pm.installPackageWithVerificationAndEncryption(mPackageURI, observer, installFlags,
                     installerPackageName, verificationParams, null);
         }
+        mPackageIntentFilter = new IntentFilter();
+        mPackageIntentFilter.addAction(Intent.ACTION_PACKAGE_REMOVED);
+        mPackageIntentFilter.addAction(Intent.ACTION_PACKAGE_ADDED);
+        mPackageIntentFilter.addAction(Intent.ACTION_PACKAGE_REPLACED);
+        mPackageIntentFilter.addDataScheme("package");
+        mPackageReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                Log.i(TAG, "Receive: " + intent);
+                if (Intent.ACTION_PACKAGE_REMOVED.equals(intent.getAction())) {
+                    Uri data = intent.getData();
+                    Log.i(TAG, "data: " + data);
+                    if (data != null) {
+                        String pkg = data.getSchemeSpecificPart();
+                        Log.i(TAG, "pkg: " + pkg);
+                        Log.i(TAG, "mAppInfo.packageName: " + mAppInfo.packageName);
+                        if (pkg.equals(mAppInfo.packageName))
+                            mLaunchButton.setEnabled(false);
+                    }
+                }
+                else if (Intent.ACTION_PACKAGE_ADDED.equals(intent.getAction()) || Intent.ACTION_PACKAGE_REPLACED.equals(intent.getAction())) {
+                    Uri data = intent.getData();
+                    Log.i(TAG, "data: " + data);
+                    if (data != null) {
+                        String pkg = data.getSchemeSpecificPart();
+                        Log.i(TAG, "pkg: " + pkg);
+                        Log.i(TAG, "mAppInfo.packageName: " + mAppInfo.packageName);
+                        if (pkg.equals(mAppInfo.packageName))
+                            mLaunchButton.setEnabled(true);
+                    }
+                }
+            }
+        };
+        registerReceiver(mPackageReceiver,mPackageIntentFilter);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        unregisterReceiver(mPackageReceiver);
     }
 
     public void onClick(View v) {
