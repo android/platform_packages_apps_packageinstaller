@@ -47,6 +47,7 @@ This is the structure for the list of all permissions.
                 style="?android:attr/listSeparatorTextViewStyle"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
+                android:textAlignment="viewStart"
                 android:text="@string/devicePerms" />
         </LinearLayout>
     </LinearLayout>
