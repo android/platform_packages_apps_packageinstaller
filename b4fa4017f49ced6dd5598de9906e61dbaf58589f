@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2780d078_c11fe21b",
+        "filename": "src/com/android/packageinstaller/InstallAppProgress.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1004424
+      },
+      "writtenOn": "2013-07-16T05:46:23Z",
+      "side": 1,
+      "message": "For this to work properly the following commit is needed, or the drawable will not be shown.\n\n https://android-review.googlesource.com/#/c/62065/",
+      "revId": "b4fa4017f49ced6dd5598de9906e61dbaf58589f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
