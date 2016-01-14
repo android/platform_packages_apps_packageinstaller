@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2771fe1c_e417fa30",
+        "filename": "src/com/android/packageinstaller/PackageInstallerActivity.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 1004882
+      },
+      "writtenOn": "2016-01-14T13:47:02Z",
+      "side": 1,
+      "message": "Removing the INSTALL_NON_MARKET_APPS check would probably be enough for this to allow a one-shot implementation.",
+      "range": {
+        "startLine": 363,
+        "startChar": 69,
+        "endLine": 363,
+        "endChar": 70
+      },
+      "revId": "3ce5984c09403c0ef09f0826f5fe18520192bec2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
