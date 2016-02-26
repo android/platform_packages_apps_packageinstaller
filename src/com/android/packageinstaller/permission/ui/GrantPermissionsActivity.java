@@ -308,6 +308,10 @@ public class GrantPermissionsActivity extends OverlayTouchActivity
             String permission, int permissionPolicy) {
         boolean permissionRequested = false;
 
+        if (callingPackageInfo.requestedPermissions == null) {
+            return PERMISSION_DENIED;
+        }
+
         for (int i = 0; i < callingPackageInfo.requestedPermissions.length; i++) {
             if (permission.equals(callingPackageInfo.requestedPermissions[i])) {
                 permissionRequested = true;
