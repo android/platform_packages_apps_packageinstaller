@@ -1,0 +1,8 @@
+Presubmit-Verified+1: Treehugger Robot <treehugger-gerrit@google.com>
+Verified+1: Marie Janssen <jamuraa@google.com>
+Code-Review+2: Marie Janssen <jamuraa@google.com>
+Submitted-by: Marie Janssen <jamuraa@google.com>
+Submitted-at: Thu, 27 Oct 2016 23:07:31 +0000
+Reviewed-on: https://android-review.googlesource.com/295768
+Project: platform/packages/apps/PackageInstaller
+Branch: refs/heads/master
