@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "403ee662_b30f5809",
+        "filename": "OWNERS",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1084818
+      },
+      "writtenOn": "2017-06-14T20:56:16Z",
+      "side": 1,
+      "message": "I don\u0027t think we need owner restriction of this project, so an empty file would be fine.\n\nIf you absolutely need to add some, please use\n- svetoslavganov@google.com\n- moltmann@google.com\n- toddke@google.com\n- suprabh@google.com",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 18
+      },
+      "revId": "4a8bbb02485907cfeb4a9f785c9294943663eca1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
