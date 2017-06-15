@@ -1,0 +1,9 @@
+Verified+1: Chih-hung Hsieh <chh@google.com>
+Code-Review+2: Philip P. Moltmann <moltmann@google.com>
+Autosubmit+1: Chih-hung Hsieh <chh@google.com>
+Presubmit-Verified+1: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-by: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-at: Thu, 15 Jun 2017 00:05:32 +0000
+Reviewed-on: https://android-review.googlesource.com/415859
+Project: platform/packages/apps/PackageInstaller
+Branch: refs/heads/master
