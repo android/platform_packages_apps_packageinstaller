@@ -153,7 +153,9 @@ public final class AppPermissionsFragment extends Fragment{
             if (!Utils.shouldShowPermission(group, mAppPermissions.getPackageInfo().packageName)) {
                 continue;
             }
-            items.add(new PermissionLineItem(group, context));
+            PermissionLineItem permissionItem = new PermissionLineItem(group, context);
+            permissionItem.setToggleEnable(!group.isPolicyFixed());
+            items.add(permissionItem);
         }
         return items;
     }
