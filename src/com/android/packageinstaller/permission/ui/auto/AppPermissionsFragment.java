@@ -42,6 +42,8 @@ import com.android.packageinstaller.R;
 import com.android.packageinstaller.permission.model.AppPermissionGroup;
 import com.android.packageinstaller.permission.model.AppPermissions;
 import com.android.packageinstaller.permission.utils.Utils;
+import com.android.settingslib.RestrictedLockUtils;
+import com.android.settingslib.RestrictedLockUtils.EnforcedAdmin;
 
 import java.util.ArrayList;
 
@@ -153,7 +155,9 @@ public final class AppPermissionsFragment extends Fragment{
             if (!Utils.shouldShowPermission(group, mAppPermissions.getPackageInfo().packageName)) {
                 continue;
             }
-            items.add(new PermissionLineItem(group, context));
+            PermissionLineItem permissionItem = new PermissionLineItem(group, context);
+            permissionItem.setPolicyFixed(group.isPolicyFixed());
+            items.add(permissionItem);
         }
         return items;
     }
@@ -173,6 +177,7 @@ public final class AppPermissionsFragment extends Fragment{
     private class PermissionLineItem extends IconToggleLineItem {
         private final AppPermissionGroup mPermissionGroup;
         private final Context mContext;
+        private boolean mIsPolicyFixed = false;
 
         PermissionLineItem(AppPermissionGroup permissionGroup, Context context) {
             super(permissionGroup.getLabel(), context);
@@ -185,6 +190,14 @@ public final class AppPermissionsFragment extends Fragment{
             if (event.getAction() != MotionEvent.ACTION_DOWN) {
                 return true;
             }
+
+            if (mIsPolicyFixed) {
+                EnforcedAdmin enforcedAdmin = RestrictedLockUtils.getProfileOrDeviceOwner(
+                        mContext, mPermissionGroup.getUserId());
+                RestrictedLockUtils.sendShowAdminSupportDetailsIntent(mContext, enforcedAdmin);
+                return true;
+            }
+
             if (!isChecked()) {
                 mPermissionGroup.grantRuntimePermissions(false);
                 toggleSwitch.performClick();
@@ -210,6 +223,41 @@ public final class AppPermissionsFragment extends Fragment{
             return true;
         }
 
+        @Override
+        public void onClick(View v) {
+            if (mIsPolicyFixed) {
+                EnforcedAdmin enforcedAdmin = RestrictedLockUtils.getProfileOrDeviceOwner(
+                        mContext, mPermissionGroup.getUserId());
+                RestrictedLockUtils.sendShowAdminSupportDetailsIntent(mContext, enforcedAdmin);
+                return;
+            }
+
+            if (!isChecked()) {
+                mPermissionGroup.grantRuntimePermissions(false);
+                this.getSwitch().setChecked(false);
+                this.getSwitch().performClick();
+            } else {
+                this.getSwitch().setChecked(true);
+                final boolean grantedByDefault =
+                        mPermissionGroup.hasGrantedByDefaultPermission();
+                if (grantedByDefault || !mPermissionGroup.doesSupportRuntimePermissions()) {
+                    new AlertDialog.Builder(mContext)
+                            .setMessage(grantedByDefault
+                                    ? R.string.system_warning : R.string.old_sdk_deny_warning)
+                            .setNegativeButton(R.string.cancel, null /* listener */)
+                            .setPositiveButton(R.string.grant_dialog_button_deny_anyway,
+                                    (dialog, which) -> {
+                                        mPermissionGroup.revokeRuntimePermissions(false);
+                                        this.getSwitch().performClick();
+                                    })
+                            .show();
+                } else {
+                    mPermissionGroup.revokeRuntimePermissions(false);
+                    this.getSwitch().performClick();
+                }
+            }
+        }
+
         @DrawableRes
         public int getIcon() {
             return mPermissionGroup.getIconResId();
@@ -233,6 +281,10 @@ public final class AppPermissionsFragment extends Fragment{
         @Override
         public boolean isExpandable() {
             return false;
+        }
+
+        public void setPolicyFixed(boolean isPolicyFixed) {
+            mIsPolicyFixed = isPolicyFixed;
         }
     }
 }
