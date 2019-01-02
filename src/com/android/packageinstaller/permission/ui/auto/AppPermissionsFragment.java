@@ -40,6 +40,8 @@ import com.android.packageinstaller.R;
 import com.android.packageinstaller.permission.model.AppPermissionGroup;
 import com.android.packageinstaller.permission.model.AppPermissions;
 import com.android.packageinstaller.permission.utils.Utils;
+import com.android.settingslib.RestrictedLockUtils;
+import com.android.settingslib.RestrictedLockUtils.EnforcedAdmin;
 
 import java.util.ArrayList;
 
@@ -173,11 +175,13 @@ public final class AppPermissionsFragment extends Fragment{
     private class PermissionLineItem extends IconToggleLineItem {
         private final AppPermissionGroup mPermissionGroup;
         private final Context mContext;
+        private boolean mIsPolicyFixed = false;
 
         PermissionLineItem(AppPermissionGroup permissionGroup, Context context) {
             super(permissionGroup.getLabel(), context);
             mContext = context;
             mPermissionGroup = permissionGroup;
+            mIsPolicyFixed = permissionGroup.isPolicyFixed();
         }
 
         @Override
@@ -185,29 +189,14 @@ public final class AppPermissionsFragment extends Fragment{
             if (event.getAction() != MotionEvent.ACTION_DOWN) {
                 return true;
             }
-            if (!isChecked()) {
-                mPermissionGroup.grantRuntimePermissions(false);
-                toggleSwitch.performClick();
-            } else {
-                final boolean grantedByDefault =
-                        mPermissionGroup.hasGrantedByDefaultPermission();
-                if (grantedByDefault || !mPermissionGroup.doesSupportRuntimePermissions()) {
-                    new AlertDialog.Builder(mContext)
-                            .setMessage(grantedByDefault
-                                    ? R.string.system_warning : R.string.old_sdk_deny_warning)
-                            .setNegativeButton(R.string.cancel, null /* listener */)
-                            .setPositiveButton(R.string.grant_dialog_button_deny_anyway,
-                                    (dialog, which) -> {
-                                        mPermissionGroup.revokeRuntimePermissions(false);
-                                        toggleSwitch.performClick();
-                                    })
-                            .show();
-                } else {
-                    mPermissionGroup.revokeRuntimePermissions(false);
-                    toggleSwitch.performClick();
-                }
-            }
+
+            performClickWithItemOrToggle(toggleSwitch);
             return true;
+        }
+
+        @Override
+        public void onClick(View v) {
+            performClickWithItemOrToggle(getSwitch());
         }
 
         @DrawableRes
@@ -233,6 +222,37 @@ public final class AppPermissionsFragment extends Fragment{
         @Override
         public boolean isExpandable() {
             return false;
+        }
+
+        public void performClickWithItemOrToggle(Switch toggleSwitch) {
+            if(mIsPolicyFixed){
+                EnforcedAdmin enforcedAdmin = RestrictedLockUtils.getProfileOrDeviceOwner
+                        (mContext, mPermissionGroup.getUserId());
+                RestrictedLockUtils.sendShowAdminSupportDetailsIntent(mContext, enforcedAdmin);
+                return;
+            }
+            if (!isChecked()) {
+                mPermissionGroup.grantRuntimePermissions(/* fixedByTheUser= */ false);
+                toggleSwitch.performClick();
+            } else {
+                final boolean grantedByDefault =
+                        mPermissionGroup.hasGrantedByDefaultPermission();
+                if (grantedByDefault || !mPermissionGroup.doesSupportRuntimePermissions()) {
+                    new AlertDialog.Builder(mContext)
+                            .setMessage(grantedByDefault
+                                    ? R.string.system_warning : R.string.old_sdk_deny_warning)
+                            .setNegativeButton(R.string.cancel, null /* listener */)
+                            .setPositiveButton(R.string.grant_dialog_button_deny_anyway,
+                                    (dialog, which) -> {
+                                        mPermissionGroup.revokeRuntimePermissions(false);
+                                        toggleSwitch.performClick();
+                                    })
+                            .show();
+                } else {
+                    mPermissionGroup.revokeRuntimePermissions(false);
+                    toggleSwitch.performClick();
+                }
+            }
         }
     }
 }
