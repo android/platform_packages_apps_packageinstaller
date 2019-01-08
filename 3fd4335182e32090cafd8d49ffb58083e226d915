@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8d31699b_65b1f408",
+        "filename": "src/com/android/packageinstaller/permission/ui/auto/AppPermissionsFragment.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1344527
+      },
+      "writtenOn": "2019-01-08T18:19:42Z",
+      "side": 1,
+      "message": "Optional: configure this in the constructor of PermissionLineItem if it won\u0027t change during the object\u0027s lifetime.",
+      "range": {
+        "startLine": 159,
+        "startChar": 27,
+        "endLine": 159,
+        "endChar": 65
+      },
+      "revId": "3fd4335182e32090cafd8d49ffb58083e226d915",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a59be05_01abc915",
+        "filename": "src/com/android/packageinstaller/permission/ui/auto/AppPermissionsFragment.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1344527
+      },
+      "writtenOn": "2019-01-08T18:19:42Z",
+      "side": 1,
+      "message": "There\u0027s duplicate code in these methods.  Is there a way to get view clicks and toggle touches flowing through the same pathway?",
+      "range": {
+        "startLine": 188,
+        "startChar": 8,
+        "endLine": 259,
+        "endChar": 9
+      },
+      "revId": "3fd4335182e32090cafd8d49ffb58083e226d915",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
