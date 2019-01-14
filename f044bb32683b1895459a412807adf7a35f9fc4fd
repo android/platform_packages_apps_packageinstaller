@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bec7e169_fd7ea896",
+        "filename": "src/com/android/packageinstaller/permission/ui/auto/AppPermissionsFragment.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1344527
+      },
+      "writtenOn": "2019-01-14T17:37:05Z",
+      "side": 1,
+      "message": "getSwitch().setChecked(isChecked())\n\nAlso, is this needed with the calls to toggleSwitch.performClick() in performClickWithItemOrToggle()?",
+      "range": {
+        "startLine": 201,
+        "startChar": 12,
+        "endLine": 205,
+        "endChar": 13
+      },
+      "revId": "f044bb32683b1895459a412807adf7a35f9fc4fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7f398d51_ae79580c",
+        "filename": "src/com/android/packageinstaller/permission/ui/auto/AppPermissionsFragment.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 1344527
+      },
+      "writtenOn": "2019-01-14T17:37:05Z",
+      "side": 1,
+      "message": "Optional: add a comment since this reads as a revoke if the purpose of the boolean is unknown.\n\nmPermissionGroup.grantRuntimePermissions(/* fixedByTheUser\u003d */ false);",
+      "range": {
+        "startLine": 241,
+        "startChar": 57,
+        "endLine": 241,
+        "endChar": 62
+      },
+      "revId": "f044bb32683b1895459a412807adf7a35f9fc4fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
