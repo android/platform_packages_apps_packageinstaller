@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "58db6097_303d58e2",
+        "filename": "src/com/android/packageinstaller/permission/ui/auto/AppPermissionsFragment.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 1344527
+      },
+      "writtenOn": "2019-01-15T18:15:21Z",
+      "side": 1,
+      "message": "Looks like the alignment is off here.  Also, with this added, what is the purpose of the toggleSwitch.performClick() calls above?",
+      "range": {
+        "startLine": 256,
+        "startChar": 10,
+        "endLine": 256,
+        "endChar": 22
+      },
+      "revId": "e95e25a12cd6c22817b4e6567b61f595ea8bb2b2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
