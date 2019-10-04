@@ -7,7 +7,9 @@
                     "include-filter": "android.appsecurity.cts.PermissionsHostTest"
                 }
             ]
-        },
+        }
+    ],
+    "postsubmit-devicepolicy": [
         {
             "name": "CtsDevicePolicyManagerTestCases",
             "options": [
