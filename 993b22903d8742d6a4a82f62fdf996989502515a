@@ -52,6 +52,24 @@
       "revId": "993b22903d8742d6a4a82f62fdf996989502515a",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4197a0f1_ddd6fa6f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1045544
+      },
+      "writtenOn": "2020-08-21T18:04:41Z",
+      "side": 1,
+      "message": "Understood. Realistically I think the only time we\u0027ll ever want to make changes outside ui/television is for updating res/ and somebody from the team will always be on CC.",
+      "parentUuid": "2169e69b_03e8d6bf",
+      "revId": "993b22903d8742d6a4a82f62fdf996989502515a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
