@@ -16,6 +16,24 @@
       "revId": "993b22903d8742d6a4a82f62fdf996989502515a",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d7dbb76b_d4196438",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1045544
+      },
+      "writtenOn": "2020-08-21T17:34:47Z",
+      "side": 1,
+      "message": "It could be, but that\u0027s not what was done for Android Auto, so I followed that. You want us to create a separate OWNERS file then?",
+      "parentUuid": "8d4aad9e_dbaabbca",
+      "revId": "993b22903d8742d6a4a82f62fdf996989502515a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
