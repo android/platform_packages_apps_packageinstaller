@@ -34,6 +34,24 @@
       "revId": "993b22903d8742d6a4a82f62fdf996989502515a",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2169e69b_03e8d6bf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1084818
+      },
+      "writtenOn": "2020-08-21T17:59:53Z",
+      "side": 1,
+      "message": "I am fine with giving you full access. If you change non-TV related code, please check back with Nate, me or somebody.\n\nSometimes things look weird but have good reasons.",
+      "parentUuid": "d7dbb76b_d4196438",
+      "revId": "993b22903d8742d6a4a82f62fdf996989502515a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
