@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8d4aad9e_dbaabbca",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1084818
+      },
+      "writtenOn": "2020-08-21T17:24:05Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be in the television subdirs?",
+      "revId": "993b22903d8742d6a4a82f62fdf996989502515a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
