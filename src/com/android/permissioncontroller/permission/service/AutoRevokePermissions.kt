@@ -490,6 +490,10 @@ suspend fun isPackageAutoRevokeExempt(
     val packageName = pkg.packageName
     val packageUid = pkg.uid
 
+    if (packageName.equals("android")) {
+        return true
+    }
+
     val whitelistAppOpMode =
         AppOpLiveData[packageName,
             AppOpsManager.OPSTR_AUTO_REVOKE_PERMISSIONS_IF_UNUSED, packageUid]

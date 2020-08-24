@@ -19,6 +19,9 @@ package com.android.permissioncontroller.permission.data
 import android.os.UserHandle
 import com.android.permissioncontroller.permission.data.AllPackageInfosLiveData.addSource
 import com.android.permissioncontroller.permission.model.livedatatypes.LightPackageInfo
+import android.content.pm.PackageManager.GET_PERMISSIONS
+import android.content.pm.PackageManager.MATCH_ALL
+import com.android.permissioncontroller.PermissionControllerApplication
 
 /**
  * A LiveData which tracks the PackageInfos of all of the packages in the system, for all users.
@@ -48,7 +51,12 @@ object AllPackageInfosLiveData :
         if (packageInfos == null) {
             userPackageInfos.remove(user)
         } else {
-            userPackageInfos[user] = packageInfos
+            //userPackageInfos[user] = packageInfos
+            val sourcePackageInfos = PermissionControllerApplication.get()
+                .applicationContext.packageManager
+                .getInstalledPackagesAsUser(GET_PERMISSIONS or MATCH_ALL, user.identifier)
+            userPackageInfos[user] = sourcePackageInfos.map { packageInfo ->
+                LightPackageInfo(packageInfo) }
         }
         if (userPackageInfosLiveDatas.all { it.value.isInitialized }) {
             value = userPackageInfos.toMap()
