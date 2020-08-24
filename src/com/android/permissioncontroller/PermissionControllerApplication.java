@@ -25,6 +25,7 @@ import android.util.ArrayMap;
 import com.android.permissioncontroller.role.model.Role;
 import com.android.permissioncontroller.role.model.Roles;
 import com.android.permissioncontroller.role.ui.SpecialAppAccessListActivity;
+import com.android.permissioncontroller.permission.data.PackageBroadcastReceiver;
 
 public final class PermissionControllerApplication extends Application {
 
@@ -38,6 +39,14 @@ public final class PermissionControllerApplication extends Application {
 
         PackageItemInfo.forceSafeLabels();
         updateSpecialAppAccessListActivityEnabledState();
+
+        PackageBroadcastReceiver.INSTANCE.addAllCallback(new PackageBroadcastReceiver
+                                                         .PackageBroadcastListener() {
+            @Override
+            public void onPackageUpdate(String packageName) {
+                // do nothing
+            }
+        });
     }
 
     /**
