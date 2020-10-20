@@ -24,7 +24,8 @@ import com.android.permissioncontroller.permission.model.livedatatypes.LightPack
  * A LiveData which tracks the PackageInfos of all of the packages in the system, for all users.
  */
 object AllPackageInfosLiveData :
-    SmartUpdateMediatorLiveData<Map<UserHandle, List<LightPackageInfo>>>() {
+    SmartUpdateMediatorLiveData<Map<UserHandle, List<LightPackageInfo>>>(),
+    DeepUpdateable {
 
     private val userPackageInfosLiveDatas = mutableMapOf<UserHandle, UserPackageInfosLiveData>()
     private val userPackageInfos = mutableMapOf<UserHandle, List<LightPackageInfo>>()
@@ -32,6 +33,15 @@ object AllPackageInfosLiveData :
     init {
         addSource(UsersLiveData) {
             updateIfActive()
+        }
+    }
+
+    override suspend fun onDeepUpdate() {
+        update()
+        GlobalScope.launch(Main.immediate) {
+            for ((_, liveData) in userPackageInfosLiveDatas) {
+                liveData.updateAsync()
+            }
         }
     }
 
