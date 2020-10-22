@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "236b7351_fa42b75f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1582010
+      },
+      "writtenOn": "2020-10-22T05:39:19Z",
+      "side": 1,
+      "message": "b/171371510\n\nhttps://partnerissuetracker.corp.google.com/issues/171371510",
+      "revId": "0326a40aa4dfafdde67035a6831035c36c36cfbc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
