@@ -86,11 +86,12 @@ abstract class SmartUpdateMediatorLiveData<T> : MediatorLiveData<T>(),
             }
         }
 
+        val wasStale = isStale
+        isStale = !(sources.all { !it.isStale } && hasActiveObservers())
+
         if (valueNotEqual(super.getValue(), newValue)) {
-            isStale = false
             super.setValue(newValue)
-        } else if (isStale) {
-            isStale = false
+        } else if (wasStale && !isStale) {
             // We are no longer stale- notify active stale observers we are up-to-date
             val liveObservers = staleObservers.filter { it.first.lifecycle.currentState >= STARTED }
             for ((_, observer) in liveObservers) {
