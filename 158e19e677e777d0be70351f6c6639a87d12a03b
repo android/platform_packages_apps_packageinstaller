@@ -33,6 +33,23 @@
       "message": "Hi Nate, could you help review this CL?",
       "revId": "158e19e677e777d0be70351f6c6639a87d12a03b",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "29ec6c37_46ac08e0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1137915
+      },
+      "writtenOn": "2020-10-23T16:43:05Z",
+      "side": 1,
+      "message": "I think this is a bit of a workaround for the issues rather than a fix for the root cause\n\nFrom our discussions on the bug I believe there might be 2 issues impacting the test:\n - getInitializedValue does not update for args (staleOk\u003dfalse, forceUpdate\u003dfalse) when the LiveData isStale\n - LiveData.update(as used in getInitializedValue(forceUpdate \u003d true)) isn\u0027t deep, which is a problem for AllPackagesInfoLiveData sometimes not seeing the test app among installed packages\n\nI think aosp/1467724 would be the way to fix these",
+      "revId": "158e19e677e777d0be70351f6c6639a87d12a03b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
