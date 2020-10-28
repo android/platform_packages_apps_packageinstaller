@@ -427,9 +427,9 @@
     <role
         name="android.app.role.SYSTEM_GALLERY"
         defaultHolders="config_systemGallery"
-        exclusive="true"
+        exclusive="false"
         fallBackToDefaultHolder="true"
-        systemOnly="true"
+        systemOnly="false"
         visible="false">
         <permissions>
             <permission-set name="storage" />
