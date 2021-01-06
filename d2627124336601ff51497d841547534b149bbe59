@@ -1,0 +1,11 @@
+Lint+1: Lint 🤖 <ayeaye-gerrit@google.com>
+Presubmit-Verified+2: Treehugger Robot <treehugger-gerrit@google.com>
+Code-Review+2: Nate Myren <ntmyren@google.com>
+Autosubmit+1: Hung-ying Tyan <tyanh@google.com>
+DrNo-Review+1: Hung-ying Tyan <tyanh@google.com>
+Open-Source-Licensing+1: Lint 🤖 <ayeaye-gerrit@google.com>
+Submitted-by: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-at: Wed, 06 Jan 2021 02:16:12 +0000
+Reviewed-on: https://android-review.googlesource.com/c/platform/packages/apps/PackageInstaller/+/1532550
+Project: platform/packages/apps/PackageInstaller
+Branch: refs/heads/android11-gsi
