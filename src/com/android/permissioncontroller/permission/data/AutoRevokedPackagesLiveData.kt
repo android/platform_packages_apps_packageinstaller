@@ -128,7 +128,7 @@ object AutoRevokedPackagesLiveData
 
                 addSource(permStateLiveData) { permState ->
                     var added = false
-                    if (permState == null && permStateLiveData.isInitialized) {
+                    if (permState == null && !permStateLiveData.isStale) {
                         permStateLiveDatas.remove(packagePermGroup)
                         removeSource(permStateLiveData)
                     } else if (permState != null) {

@@ -93,7 +93,7 @@ class AutoRevokeViewModel(private val app: Application, private val sessionId: L
         }
 
         override suspend fun loadDataAndPostValue(job: Job) {
-            if (!UnusedAutoRevokedPackagesLiveData.isInitialized ||
+            if (UnusedAutoRevokedPackagesLiveData.isStale ||
                 !usageStatsLiveData.isInitialized || !AllPackageInfosLiveData.isInitialized) {
                 return
             }
