@@ -92,7 +92,7 @@ class AutoRevokeFragment : PermissionsFrameFragment() {
         sessionId = arguments!!.getLong(EXTRA_SESSION_ID, INVALID_SESSION_ID)
         val factory = AutoRevokeViewModelFactory(activity!!.application, sessionId)
         viewModel = ViewModelProvider(this, factory).get(AutoRevokeViewModel::class.java)
-        viewModel.autoRevokedPackageCategoriesLiveData.observe(this, Observer {
+        viewModel.autoRevokedPackageCategoriesLiveData.observeStale(this, Observer {
             it?.let { pkgs ->
                 updatePackages(pkgs)
                 setLoading(false, true)
