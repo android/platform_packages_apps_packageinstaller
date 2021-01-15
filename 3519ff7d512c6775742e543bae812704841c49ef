@@ -1,0 +1,10 @@
+Code-Review+2: Nate Myren <ntmyren@google.com>
+Code-Review+1: Rk Vilas <vilas.rk@oneplus.corp-partner.google.com>
+Presubmit-Verified+2: Treehugger Robot <treehugger-gerrit@google.com>
+Lint+1: Lint 🤖 <ayeaye-gerrit@google.com>
+Open-Source-Licensing+1: Lint 🤖 <ayeaye-gerrit@google.com>
+Submitted-by: Eugene Susla <eugenesusla@google.com>
+Submitted-at: Fri, 15 Jan 2021 18:47:59 +0000
+Reviewed-on: https://android-review.googlesource.com/c/platform/packages/apps/PackageInstaller/+/1467724
+Project: platform/packages/apps/PackageInstaller
+Branch: refs/heads/master
