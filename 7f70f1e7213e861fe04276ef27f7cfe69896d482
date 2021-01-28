@@ -1,0 +1,10 @@
+Open-Source-Licensing+1: Lint 🤖 <ayeaye-gerrit@google.com>
+Autosubmit+1: Sergey Nikolaienkov <sergeynv@google.com>
+Presubmit-Verified+2: Treehugger Robot <treehugger-gerrit@google.com>
+Lint+1: Lint 🤖 <ayeaye-gerrit@google.com>
+Code-Review+2: Robin Lee <rgl@google.com>
+Submitted-by: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-at: Thu, 28 Jan 2021 14:19:44 +0000
+Reviewed-on: https://android-review.googlesource.com/c/platform/packages/apps/PackageInstaller/+/1563372
+Project: platform/packages/apps/PackageInstaller
+Branch: refs/heads/master
