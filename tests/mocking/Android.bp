@@ -14,6 +14,13 @@
 // limitations under the License.
 //
 
+package {
+    // A large-scale-change added 'default_applicable_licenses' to import
+    // the below license kinds from "packages_apps_PermissionController_license":
+    //   SPDX-license-identifier-Apache-2.0
+    default_applicable_licenses: ["packages_apps_PermissionController_license"],
+}
+
 android_test {
     name: "PermissionControllerMockingTests",
 
